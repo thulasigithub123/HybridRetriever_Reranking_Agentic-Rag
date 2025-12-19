@@ -1,0 +1,61 @@
+# Python related
+
+**pycache**/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environment
+
+venv/
+env/
+ENV/
+.env
+
+# Jupyter Notebook checkpoints
+
+.ipynb_checkpoints/
+
+# Logs
+
+*.log
+logs/
+
+# macOS
+
+.DS_Store
+
+# VSCode
+
+.vscode/
+
+# Streamlit cache
+
+.streamlit/
+
+# FAISS database files
+
+vectorDBstore/
+*.faiss
+*.pkl
+
+# LangServe / LangChain output files
+
+*.db
+*.json
+
+# Temporary files
+
+*.tmp
+*.bak
+*~
+
+# System files
+
+Thumbs.db
+
+# Environment config files
+.env
+.env.local
+.env.*.local
