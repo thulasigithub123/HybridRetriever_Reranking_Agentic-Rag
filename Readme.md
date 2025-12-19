@@ -219,3 +219,33 @@ This section summarizes the main parameters that control PDF processing, retriev
 | `vectorDBstore` | FAISS vector store directory | `vectorDBstore` |
 
 > These parameters allow users and developers to **tune retrieval precision, reranking effectiveness, and answer quality**, making the system adaptable for different PDF sizes and query complexity.
+
+
+
+### Use Cases Where BM25 Excels
+
+- **Legal search:** Looking for exact clauses or terms in contracts.  
+- **Technical manuals / code search:** Need precise matches of function names or error codes.  
+- **Search engines with high volume of short queries:** Efficiency and relevance of exact keyword matching is critical.  
+- **Regulated environments:** Where explainability of search results is required.
+
+
+### Use Cases Where Cross-Encoders Excel
+
+- **Semantic Re-ranking:**  
+  After an initial retrieval (e.g., with BM25 or a vector search), cross-encoders can accurately re-rank the top results by computing the relevance between the query and each document.  
+
+- **Question Answering Systems:**  
+  For retrieval-augmented QA, cross-encoders can determine the most relevant passages or documents to answer a specific question with high precision.  
+
+- **Paraphrase Detection / Duplicate Identification:**  
+  Cross-encoders excel at judging if two sentences or documents are semantically equivalent, making them ideal for deduplication or paraphrase detection tasks.  
+
+- **Short-Text Semantic Matching:**  
+  When query and document pairs are short, cross-encoders can fully leverage token-level interactions, outperforming bi-encoders in accuracy.  
+
+- **High-Precision Search in Small to Medium Datasets:**  
+  For datasets where inference cost is manageable, cross-encoders provide very accurate matching, especially when exact semantic alignment matters.  
+
+- **Legal or Regulatory Compliance Checks:**  
+  When determining if a document meets certain semantic criteria (e.g., contract clauses matching policy requirements), cross-encoders give precise relevance scoring.
